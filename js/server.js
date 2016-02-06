@@ -2,51 +2,41 @@ var express = require('express');
 var app = express();
 var PORT = 8080;
 var bodyParser = require('body-parser');
-var session = require('express-session');
+//var session = require('express-session');
 
 //Body Parser
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use("/js", express.static("public/js"));
-app.use("/css", express.static("public/css"));
+app.use("/js", express.static("js"));
+app.use("/css", express.static("css"));
 
-//Express Session
-app.use(
-  session(
-  {
-    secret: "my secret",
-    cookie: { maxAge: 60000 },
-    saveUnitialized: true,
-    resave: false
-    }
-  )
-);
 
 app.get('/', function(req, res) {
-  res.sendFile(process.cwd() + '/home.html');
+  res.sendFile(process.cwd() + '/views/home.html');
 });
 
-app.get('/login', function(req, res) {
-  res.sendFile(process.cwd() + '/login.html');
-});
+//app.get('/login', function(req, res) {
+  //res.sendFile(process.cwd() + '/login.html');
+//});
 
 app.get('/my-account', function(req, res) {
-  res.sendFile(process.cwd() + '/account-page.html');
+  res.sendFile(process.cwd() + '/views/account-page.html');
 });
 
 app.get('/help', function(req, res) {
-  res.sendFile(process.cwd() + '/help.html');
+  res.sendFile(process.cwd() + '/views/help.html');
 });
 
-app.post('/login', function(req, res) {
+app.post('/', function(req, res) {
   console.log(req.body);
   if (req.body.email == "servio19@gmail.com" && req.body.password == "password") {
     res.redirect('/my-account');
   } else {
-    res.redirect('/login');
+    res.redirect('/');
   }
 });
 
 app.listen(PORT, function() {
   console.log('App listening on port %s', PORT);
-})
+});
+

@@ -1,0 +1,30 @@
+{
+  "name": "web_site",
+  "version": "1.0.0",
+  "description": "Web Site with Node js and Express with login capabilities",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.13.4",
+    "body-parser": "^1.14.2",
+    "express-session": "^1.13.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Serviox19/Web-Site-with-Server-Example.git"
+  },
+  "keywords": [
+    "Node",
+    "js",
+    "Express"
+  ],
+  "author": "Servio Mora",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Serviox19/Web-Site-with-Server-Example/issues"
+  },
+  "homepage": "https://github.com/Serviox19/Web-Site-with-Server-Example#readme"
+}
